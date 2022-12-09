@@ -15,6 +15,8 @@ const PokeThumb = ({ pokemon }: Props) => {
         height={475}
         alt={pokemon.name}
         quality={75}
+        priority
+        placeholder="blur"
       />
     </div>
   )
