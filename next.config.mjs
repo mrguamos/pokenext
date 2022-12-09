@@ -15,6 +15,7 @@ const config = {
   },
   images: {
     domains: ['raw.githubusercontent.com'],
+    minimumCacheTTL: 3.154e7,
   },
 }
 export default config
