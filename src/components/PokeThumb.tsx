@@ -8,20 +8,20 @@ type Props = {
 
 const PokeThumb = ({ pokemon }: Props) => {
   return (
-    <div className="relative flex aspect-square flex-col items-center justify-center rounded-lg bg-gradient-radial from-slate-900 to-transparent p-5 hover:cursor-pointer">
-      {/* <span className="font-semibold text-white">
+    <div className="relative flex aspect-square flex-col  justify-center rounded-lg bg-gradient-radial from-slate-900 to-transparent p-5">
+      <span className="font self-end text-white">
         #{pokemon.id.toString().padStart(3, '0')}
-      </span> */}
+      </span>
       <Image
         src={pokemon.sprites.other['official-artwork'].front_default}
-        fill
+        width={475}
+        height={475}
         alt={pokemon.name}
         quality={75}
         priority
+        className="self-center"
       />
-      {/* <span className="font-semibold text-teal-400">
-        {pokemon.name.toUpperCase()}
-      </span> */}
+      <span className="font-semibold text-teal-400">{pokemon.name}</span>
     </div>
   )
 }

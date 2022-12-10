@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import type { Pokemon } from '../../types/pokemon'
 import PokeThumb from './PokeThumb'
@@ -11,7 +12,11 @@ const HomeComponent = ({ pokemons }: Props) => {
     <>
       <div className={'grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 '}>
         {pokemons.map((pokemon) => {
-          return <PokeThumb pokemon={pokemon} key={pokemon.id} />
+          return (
+            <Link href={`/pokemons/${pokemon.name}`} key={pokemon.id}>
+              <PokeThumb pokemon={pokemon} />
+            </Link>
+          )
         })}
       </div>
     </>
