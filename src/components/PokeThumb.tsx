@@ -8,7 +8,7 @@ type Props = {
 
 const PokeThumb = ({ pokemon }: Props) => {
   return (
-    <div className="relative rounded-lg bg-gradient-radial from-blue-400 to-transparent p-5">
+    <div className="relative rounded-lg bg-gradient-radial from-slate-900 to-transparent p-5">
       <Image
         src={pokemon.sprites.other['official-artwork'].front_default}
         width={475}
@@ -16,7 +16,6 @@ const PokeThumb = ({ pokemon }: Props) => {
         alt={pokemon.name}
         quality={75}
         priority
-        placeholder="blur"
       />
     </div>
   )
