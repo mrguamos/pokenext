@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 body {
-    @apply bg-gradient-radial from-indigo-500 via-indigo-700 to-indigo-900
+    @apply bg-black
 }
 

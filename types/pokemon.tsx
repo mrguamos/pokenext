@@ -29,6 +29,7 @@ export interface Pokemon {
   stats: Stat[]
   types: Type[]
   past_types: PastType[]
+  color: string
 }
 
 export interface Ability {

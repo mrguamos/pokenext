@@ -8,8 +8,13 @@ type Props = {
 
 const PokeThumb = ({ pokemon }: Props) => {
   return (
-    <div className="relative flex aspect-square flex-col  justify-center rounded-lg bg-gradient-radial from-slate-900 to-transparent p-5">
-      <span className="font self-end text-white">
+    <div
+      className={`relative flex aspect-square flex-col  justify-center rounded-lg to-transparent p-5`}
+      style={{
+        background: pokemon.color,
+      }}
+    >
+      <span className="self-end text-white">
         #{pokemon.id.toString().padStart(3, '0')}
       </span>
       <Image
@@ -21,7 +26,7 @@ const PokeThumb = ({ pokemon }: Props) => {
         priority
         className="self-center"
       />
-      <span className="font-semibold text-teal-400">{pokemon.name}</span>
+      <span className="font-semibold text-white">{pokemon.name}</span>
     </div>
   )
 }

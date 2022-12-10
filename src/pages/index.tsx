@@ -3,6 +3,7 @@ import { type NextPage } from 'next'
 import pokeHandler from '../../services/pokeapi'
 import type { Pokemon, Results } from '../../types/pokemon'
 import HomeComponent from '../components/HomeComponent'
+import Vibrant from 'node-vibrant'
 
 async function getPokemons(page: string | string[] = '1'): Promise<Pokemon[]> {
   const results = await pokeHandler(
@@ -18,6 +19,14 @@ async function getPokemons(page: string | string[] = '1'): Promise<Pokemon[]> {
     return r.json()
   })
   const pokemons = await Promise.all(pokemonsJsons)
+  await Promise.all(
+    pokemons.map(async (p) => {
+      const pallete = await Vibrant.from(
+        p.sprites.other['official-artwork'].front_default
+      ).getPalette()
+      p.color = `linear-gradient(to top, ${pallete.Muted?.hex} , ${pallete.LightMuted?.hex})`
+    })
+  )
   return pokemons
 }
 
