@@ -34,7 +34,10 @@ export const getServerSideProps: GetServerSideProps = async ({
   res,
   query,
 }) => {
-  res.setHeader('Cache-Control', 's-maxage=31536000')
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=31536000, stale-while-revalidate=31536000'
+  )
   const pokemons = await getPokemons(query.page)
   return {
     props: {
