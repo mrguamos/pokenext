@@ -10,7 +10,7 @@ type Props = {
   page: IPage
 }
 
-const HomeComponent = ({ pokemons }: Props) => {
+const HomeComponent = ({ pokemons, page }: Props) => {
   const router = useRouter()
 
   const handlePageClick = () => {
@@ -29,6 +29,7 @@ const HomeComponent = ({ pokemons }: Props) => {
         })}
       </div>
       <div className="mt-10"></div>
+      <Pagination currentPage={page.currentPage} totalPage={page.count} />
     </>
   )
 }
