@@ -1,14 +1,22 @@
 import Link from 'next/link'
 import React from 'react'
-import type { Pokemon } from '../../types/pokemon'
+import type { IPage, Pokemon } from '../../types/pokemon'
 import Pagination from './Pagination'
 import PokeThumb from './PokeThumb'
+import { useRouter } from 'next/router'
 
 type Props = {
   pokemons: Pokemon[]
+  page: IPage
 }
 
 const HomeComponent = ({ pokemons }: Props) => {
+  const router = useRouter()
+
+  const handlePageClick = () => {
+    //
+  }
+
   return (
     <>
       <div className={'grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 '}>
@@ -20,14 +28,7 @@ const HomeComponent = ({ pokemons }: Props) => {
           )
         })}
       </div>
-      <div className="mt-10">
-        <Pagination
-          currentPage={1}
-          totalPage={10}
-          next={() => console.log('next')}
-          prev={() => console.log('prev')}
-        />
-      </div>
+      <div className="mt-10"></div>
     </>
   )
 }

@@ -9,7 +9,7 @@ type Props = {
 const PokeThumb = ({ pokemon }: Props) => {
   return (
     <div
-      className={`relative flex aspect-square flex-col  justify-center rounded-lg to-transparent p-5`}
+      className={`relative flex aspect-square flex-col justify-center rounded-lg to-transparent p-5`}
       style={{
         background: pokemon.color,
       }}

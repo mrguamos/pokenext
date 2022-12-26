@@ -10,6 +10,11 @@ export interface Result {
   url: string
 }
 
+export type IPage = {
+  count: number
+  currentPage: number
+}
+
 export interface Pokemon {
   id: number
   name: string
