@@ -1,3 +1,4 @@
+import { Flex } from '@mantine/core'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -5,7 +6,14 @@ import React from 'react'
 const Header = () => {
   return (
     <>
-      <div className={'flex items-center justify-center py-5'}>
+      <Flex
+        justify={'center'}
+        align="center"
+        sx={(theme) => ({
+          paddingTop: theme.spacing.lg,
+          paddingBottom: theme.spacing.lg,
+        })}
+      >
         <Link
           href={'https://pokeapi.co/'}
           target={'_blank'}
@@ -20,12 +28,7 @@ const Header = () => {
             priority
           />
         </Link>
-      </div>
-      <hr
-        className={
-          'mx-10 h-[1px] border-0 bg-gradient-to-r from-teal-700 via-teal-500 to-teal-300'
-        }
-      />
+      </Flex>
     </>
   )
 }

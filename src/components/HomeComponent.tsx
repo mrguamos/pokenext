@@ -4,6 +4,7 @@ import type { IPage, Pokemon } from '../../types/pokemon'
 import Pagination from './Pagination'
 import PokeThumb from './PokeThumb'
 import { useRouter } from 'next/router'
+import { SimpleGrid } from '@mantine/core'
 
 type Props = {
   pokemons: Pokemon[]
@@ -19,7 +20,14 @@ const HomeComponent = ({ pokemons, page }: Props) => {
 
   return (
     <>
-      <div className={'grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 '}>
+      <SimpleGrid
+        cols={4}
+        spacing="lg"
+        breakpoints={[
+          { maxWidth: 'md', cols: 3 },
+          { maxWidth: 'sm', cols: 2 },
+        ]}
+      >
         {pokemons.map((pokemon) => {
           return (
             <Link href={`/pokemons/${pokemon.name}`} key={pokemon.id}>
@@ -27,9 +35,7 @@ const HomeComponent = ({ pokemons, page }: Props) => {
             </Link>
           )
         })}
-      </div>
-      <div className="mt-10"></div>
-      <Pagination currentPage={page.currentPage} totalPage={page.count} />
+      </SimpleGrid>
     </>
   )
 }
