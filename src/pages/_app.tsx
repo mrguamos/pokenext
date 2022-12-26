@@ -60,7 +60,8 @@ const MyApp: AppType = ({ Component, pageProps }) => {
                 borderTopColor: theme.colors.green[9],
               })}
             />
-            <Flex
+            <Container
+              size={'xl'}
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -68,7 +69,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
               }}
             >
               <Component {...pageProps} />
-            </Flex>
+            </Container>
           </Flex>
         </MantineProvider>
       </ColorSchemeProvider>

@@ -15,7 +15,6 @@ const PokeThumb = ({ pokemon }: Props) => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        aspectRatio: 'auto',
         position: 'relative',
         padding: 20,
       }}
@@ -39,7 +38,13 @@ const PokeThumb = ({ pokemon }: Props) => {
           alignSelf: 'center',
         }}
       />
-      <span className="font-semibold text-white">{pokemon.name}</span>
+      <Text
+        sx={{
+          color: 'white',
+        }}
+      >
+        {pokemon.name}
+      </Text>
     </Flex>
   )
 }

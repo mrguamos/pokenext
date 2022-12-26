@@ -21,6 +21,9 @@ const HomeComponent = ({ pokemons, page }: Props) => {
   return (
     <>
       <SimpleGrid
+        sx={{
+          width: '100%',
+        }}
         cols={4}
         spacing="lg"
         breakpoints={[
@@ -29,11 +32,7 @@ const HomeComponent = ({ pokemons, page }: Props) => {
         ]}
       >
         {pokemons.map((pokemon) => {
-          return (
-            <Link href={`/pokemons/${pokemon.name}`} key={pokemon.id}>
-              <PokeThumb pokemon={pokemon} />
-            </Link>
-          )
+          return <PokeThumb pokemon={pokemon} key={pokemon.id} />
         })}
       </SimpleGrid>
     </>
