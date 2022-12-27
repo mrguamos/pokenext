@@ -1,3 +1,4 @@
+import { Container } from '@nextui-org/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -5,7 +6,14 @@ import React from 'react'
 const Header = () => {
   return (
     <>
-      <div className={'flex items-center justify-center py-5'}>
+      <Container
+        display="flex"
+        justify="center"
+        alignItems="center"
+        css={{
+          py: '$15',
+        }}
+      >
         <Link
           href={'https://pokeapi.co/'}
           target={'_blank'}
@@ -20,12 +28,7 @@ const Header = () => {
             priority
           />
         </Link>
-      </div>
-      <hr
-        className={
-          'mx-10 h-[1px] border-0 bg-gradient-to-r from-teal-700 via-teal-500 to-teal-300'
-        }
-      />
+      </Container>
     </>
   )
 }

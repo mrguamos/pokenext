@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
 import type { IPage, Pokemon } from '../../types/pokemon'
-import Pagination from './Pagination'
 import PokeThumb from './PokeThumb'
 import { useRouter } from 'next/router'
+import { Grid, Pagination } from '@nextui-org/react'
 
 type Props = {
   pokemons: Pokemon[]
@@ -13,23 +13,39 @@ type Props = {
 const HomeComponent = ({ pokemons, page }: Props) => {
   const router = useRouter()
 
-  const handlePageClick = () => {
-    //
+  const handlePageClick = (page: number) => {
+    router.push(`/?page=${page}`)
   }
 
   return (
     <>
-      <div className={'grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 '}>
+      <Grid.Container gap={2}>
         {pokemons.map((pokemon) => {
           return (
-            <Link href={`/pokemons/${pokemon.name}`} key={pokemon.id}>
-              <PokeThumb pokemon={pokemon} />
-            </Link>
+            <Grid
+              xs={6}
+              sm={4}
+              md={3}
+              key={pokemon.id}
+              justify="center"
+              alignItems="center"
+            >
+              <Link href={`/pokemons/${pokemon.name}`}>
+                <PokeThumb pokemon={pokemon} />
+              </Link>
+            </Grid>
           )
         })}
-      </div>
-      <div className="mt-10"></div>
-      <Pagination currentPage={page.currentPage} totalPage={page.count} />
+      </Grid.Container>
+      <Pagination
+        onChange={handlePageClick}
+        color="gradient"
+        total={Math.ceil(page.count / 20)}
+        css={{
+          mt: '$10',
+          alignSelf: 'center',
+        }}
+      />
     </>
   )
 }

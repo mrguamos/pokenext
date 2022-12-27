@@ -6,7 +6,6 @@ import type {
 import { type NextPage } from 'next'
 import pokeHandler from '../../../services/pokeapi'
 import { Pokemon } from '../../../types/pokemon'
-import PokeThumb from '../../components/PokeThumb'
 
 async function getPokemon(
   id: string | string[] | undefined
@@ -40,9 +39,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 }
 
-const Pokemon: NextPage = ({
-  pokemon,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Pokemon: NextPage = ({}: InferGetStaticPropsType<
+  typeof getStaticProps
+>) => {
   return (
     <>
       <div className="h-96 w-96"></div>

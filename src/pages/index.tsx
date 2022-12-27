@@ -1,5 +1,4 @@
 import type { GetServerSideProps, InferGetServerSidePropsType } from 'next'
-import { type NextPage } from 'next'
 import pokeHandler from '../../services/pokeapi'
 import type { IPage, Pokemon, Results } from '../../types/pokemon'
 import HomeComponent from '../components/HomeComponent'

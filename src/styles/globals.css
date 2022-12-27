@@ -1,8 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-    @apply bg-black
+img, video {
+    max-width: 100%;
+    height: auto;
 }
-
