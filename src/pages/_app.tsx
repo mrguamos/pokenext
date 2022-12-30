@@ -1,16 +1,8 @@
 import { type AppType } from 'next/dist/shared/lib/utils'
-import { Poppins } from '@next/font/google'
 import Head from 'next/head'
 import '../styles/globals.css'
 import Header from '../components/Header'
 import NextNProgress from 'nextjs-progressbar'
-
-const poppins = Poppins({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  preload: true,
-})
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
@@ -27,7 +19,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
         height={2}
         showOnShallow={true}
       />
-      <main className={`${poppins.className} min-h-screen`}>
+      <main className={`min-h-screen`}>
         <Header />
         <div className={'container mx-auto py-10 px-5'}>
           <Component {...pageProps} />
