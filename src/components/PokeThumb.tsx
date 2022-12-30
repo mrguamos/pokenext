@@ -10,9 +10,6 @@ const PokeThumb = ({ pokemon }: Props) => {
   return (
     <div
       className={`relative flex aspect-auto flex-col justify-center rounded-lg to-transparent p-5`}
-      style={{
-        background: pokemon.color,
-      }}
     >
       <span className="self-end text-white">
         #{pokemon.id.toString().padStart(3, '0')}
