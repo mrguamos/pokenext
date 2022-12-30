@@ -11,15 +11,51 @@ type Props = {
   prev?: () => void
 }
 
+const PaginationButton = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <button className="min-w-[35px] bg-slate-800 py-2 rounded-xl mx-[3px] hover:bg-slate-700">
+      {children}
+    </button>
+  )
+}
+
 const fullConfig = resolveConfig(tailwindConfig)
 const screens = fullConfig.theme?.screens as KeyValuePair<string, string>
 const Pagination = (props: Props) => {
   return (
-    <div className="flex w-full items-center justify-center text-white">
-      <FaAngleLeft className="h-10 w-7" />
-      <span>1</span>
-      <FaAngleRight className="h-10 w-7" />
-    </div>
+    <nav aria-label="pagination" className="bg-transparent">
+      <ul
+        className={
+          'inline-flex items-center justify-center text-white text-sm '
+        }
+      >
+        <li>
+          <button className="min-w-[35px] bg-slate-800 py-2 rounded-xl mx-[3px] hover:bg-slate-700">
+            &lt;
+          </button>
+        </li>
+        <li>
+          <PaginationButton>1</PaginationButton>
+        </li>
+        <li>
+          <PaginationButton>2</PaginationButton>
+        </li>
+        <li>
+          <PaginationButton>3</PaginationButton>
+        </li>
+        <li>
+          <PaginationButton>4</PaginationButton>
+        </li>
+        <li>
+          <PaginationButton>5</PaginationButton>
+        </li>
+        <li>
+          <button className="min-w-[35px] bg-slate-800 py-2 rounded-xl mx-[3px] hover:bg-slate-700">
+            &gt;
+          </button>
+        </li>
+      </ul>
+    </nav>
   )
 }
 

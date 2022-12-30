@@ -9,7 +9,7 @@ type Props = {
 const PokeThumb = ({ pokemon }: Props) => {
   return (
     <div
-      className={`relative flex aspect-square flex-col justify-center rounded-lg to-transparent p-5`}
+      className={`relative flex aspect-auto flex-col justify-center rounded-lg to-transparent p-5`}
       style={{
         background: pokemon.color,
       }}
@@ -23,7 +23,6 @@ const PokeThumb = ({ pokemon }: Props) => {
         height={475}
         alt={pokemon.name}
         quality={75}
-        priority
         className="self-center"
       />
       <span className="font-semibold text-white">{pokemon.name}</span>

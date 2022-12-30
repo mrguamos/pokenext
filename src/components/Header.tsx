@@ -5,7 +5,7 @@ import React from 'react'
 const Header = () => {
   return (
     <>
-      <div className={'flex items-center justify-center py-5'}>
+      <div className={'flex items-center aspect-auto justify-center py-5'}>
         <Link
           href={'https://pokeapi.co/'}
           target={'_blank'}
@@ -16,8 +16,6 @@ const Header = () => {
             alt={'PokeAPI'}
             width={257}
             height={103}
-            itemType="webp"
-            priority
           />
         </Link>
       </div>
