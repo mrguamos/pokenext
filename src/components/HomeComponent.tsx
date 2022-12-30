@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import React from 'react'
-import type { IPage, Pokemon } from '../../types/pokemon'
+import type { IPage, MyPokemon } from '../../types/pokemon'
 import PokeThumb from './PokeThumb'
 import { useRouter } from 'next/router'
 import { Grid, Pagination } from '@nextui-org/react'
 
 type Props = {
-  pokemons: Pokemon[]
+  pokemons: MyPokemon[]
   page: IPage
 }
 

@@ -15,6 +15,13 @@ export type IPage = {
   currentPage: number
 }
 
+export interface MyPokemon {
+  id: number
+  name: string
+  color: string
+  image: string
+}
+
 export interface Pokemon {
   id: number
   name: string
