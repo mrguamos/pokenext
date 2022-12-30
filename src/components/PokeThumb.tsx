@@ -24,6 +24,7 @@ const PokeThumb = ({ pokemon }: Props) => {
         alt={pokemon.name}
         quality={75}
         className="self-center"
+        priority
       />
       <span className="font-semibold text-white">{pokemon.name}</span>
     </div>

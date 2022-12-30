@@ -16,6 +16,7 @@ const Header = () => {
             alt={'PokeAPI'}
             width={257}
             height={103}
+            priority
           />
         </Link>
       </div>
