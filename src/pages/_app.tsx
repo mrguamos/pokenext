@@ -29,7 +29,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
       />
       <main className={`${poppins.className} min-h-screen`}>
         <Header />
-        <div className={'container mx-auto py-10 px-5 md:px-0'}>
+        <div className={'container mx-auto py-10 px-5'}>
           <Component {...pageProps} />
         </div>
       </main>

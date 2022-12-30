@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import React from 'react'
-import type { IPage, Pokemon } from '../../types/pokemon'
+import type { IPage, MyPokemon } from '../../types/pokemon'
 import Pagination from './Pagination'
 import PokeThumb from './PokeThumb'
 import { useRouter } from 'next/router'
 
 type Props = {
-  pokemons: Pokemon[]
+  pokemons: MyPokemon[]
   page: IPage
 }
 
@@ -19,7 +19,7 @@ const HomeComponent = ({ pokemons, page }: Props) => {
 
   return (
     <>
-      <div className={'grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 '}>
+      <div className={'grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'}>
         {pokemons.map((pokemon) => {
           return (
             <Link href={`/pokemons/${pokemon.name}`} key={pokemon.id}>

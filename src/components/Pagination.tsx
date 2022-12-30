@@ -13,7 +13,6 @@ type Props = {
 
 const fullConfig = resolveConfig(tailwindConfig)
 const screens = fullConfig.theme?.screens as KeyValuePair<string, string>
-console.log(screens.md)
 const Pagination = (props: Props) => {
   return (
     <div className="flex w-full items-center justify-center text-white">

@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
-import type { Pokemon } from '../../types/pokemon'
+import type { MyPokemon } from '../../types/pokemon'
 
 type Props = {
-  pokemon: Pokemon
+  pokemon: MyPokemon
 }
 
 const PokeThumb = ({ pokemon }: Props) => {
@@ -18,7 +18,7 @@ const PokeThumb = ({ pokemon }: Props) => {
         #{pokemon.id.toString().padStart(3, '0')}
       </span>
       <Image
-        src={pokemon.sprites.other['official-artwork'].front_default}
+        src={pokemon.image}
         width={475}
         height={475}
         alt={pokemon.name}
