@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@next/font": "^13.0.6",
-    "next": "13.0.2",
+    "next": "13.1.1",
     "nextjs-progressbar": "^0.0.16",
     "node-vibrant": "3.2.0-alpha",
     "react": "18.2.0",
