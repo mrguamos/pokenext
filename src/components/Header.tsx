@@ -5,7 +5,7 @@ import React from 'react'
 const Header = () => {
   return (
     <>
-      <div className={'flex items-center aspect-auto justify-center py-5'}>
+      <div className={'flex aspect-auto items-center justify-center py-5'}>
         <Link
           href={'https://pokeapi.co/'}
           target={'_blank'}

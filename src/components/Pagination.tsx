@@ -13,7 +13,7 @@ type Props = {
 
 const PaginationButton = ({ children }: { children: React.ReactNode }) => {
   return (
-    <button className="min-w-[35px] bg-slate-800 py-2 rounded-xl mx-[3px] hover:bg-slate-700">
+    <button className="mx-[3px] min-w-[35px] rounded-xl bg-slate-800 py-2 hover:bg-slate-700">
       {children}
     </button>
   )
@@ -26,11 +26,11 @@ const Pagination = (props: Props) => {
     <nav aria-label="pagination" className="bg-transparent">
       <ul
         className={
-          'inline-flex items-center justify-center text-white text-sm '
+          'inline-flex items-center justify-center text-sm text-white '
         }
       >
         <li>
-          <button className="min-w-[35px] bg-slate-800 py-2 rounded-xl mx-[3px] hover:bg-slate-700">
+          <button className="mx-[3px] min-w-[35px] rounded-xl bg-slate-800 py-2 hover:bg-slate-700">
             &lt;
           </button>
         </li>
@@ -50,7 +50,7 @@ const Pagination = (props: Props) => {
           <PaginationButton>5</PaginationButton>
         </li>
         <li>
-          <button className="min-w-[35px] bg-slate-800 py-2 rounded-xl mx-[3px] hover:bg-slate-700">
+          <button className="mx-[3px] min-w-[35px] rounded-xl bg-slate-800 py-2 hover:bg-slate-700">
             &gt;
           </button>
         </li>
