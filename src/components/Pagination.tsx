@@ -13,7 +13,7 @@ type Props = {
 
 const PaginationButton = ({ children }: { children: React.ReactNode }) => {
   return (
-    <button className="mx-[3px] min-w-[35px] rounded-xl bg-slate-800 py-2 hover:bg-slate-700">
+    <button className="mx-[3px] min-w-[35px] rounded-xl bg-default py-2 hover:brightness-150">
       {children}
     </button>
   )
@@ -30,7 +30,7 @@ const Pagination = (props: Props) => {
         }
       >
         <li>
-          <button className="mx-[3px] min-w-[35px] rounded-xl bg-slate-800 py-2 hover:bg-slate-700">
+          <button className="mx-[3px] min-w-[35px] rounded-xl bg-default py-2 hover:brightness-150">
             &lt;
           </button>
         </li>
