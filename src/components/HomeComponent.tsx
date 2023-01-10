@@ -34,9 +34,9 @@ const HomeComponent = ({ pokemons, page }: Props) => {
         <ReactPaginate
           initialPage={page.currentPage - 1}
           className="inline-flex items-center text-sm font-semibold text-white"
-          activeClassName="bg-blue-500"
+          activeClassName="bg-blue-500 hover:filter-none"
           activeLinkClassName="bg-blue-500"
-          pageClassName="ml-2 bg-slate-900 rounded-lg hover:brightness-150"
+          pageClassName="ml-2 bg-slate-900 rounded-lg hover:brightness-200"
           pageLinkClassName="inline-flex justify-center w-10 h-10 items-center rounded-lg"
           breakLabel="..."
           breakClassName="ml-2 bg-slate-900 hover:brightness-150 rounded-lg"
