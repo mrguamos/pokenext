@@ -37,7 +37,7 @@ const HomeComponent = ({ pokemons, page }: Props) => {
       <div className="mt-10"></div>
       <div className="text-center">
         <Pagination
-          className="inline-flex h-10 select-none items-center text-sm"
+          className="inline-flex h-10 w-fit select-none items-center text-sm"
           currentPage={page.currentPage - 1}
           edgePageCount={1}
           middlePagesSiblingCount={1}
@@ -46,15 +46,15 @@ const HomeComponent = ({ pokemons, page }: Props) => {
           truncableClassName="text-white w-10"
           truncableText="..."
         >
-          <PrevButton className="ml-2 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-700 bg-opacity-0 hover:bg-opacity-100">
+          <PrevButton className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-700 bg-opacity-0 hover:bg-opacity-100">
             <GrPrevious className="gr-white" />
           </PrevButton>
           <PageButton
             activeClassName="bg-blue-600 hover:brightness-150"
-            className="ml-2 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-white "
+            className="ml-1 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-white "
             inactiveClassName="bg-slate-700 bg-opacity-0 hover:bg-opacity-100"
           />
-          <NextButton className="ml-2 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-700 bg-opacity-0 hover:bg-opacity-100">
+          <NextButton className="ml-1 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-700 bg-opacity-0 hover:bg-opacity-100">
             <GrNext className="gr-white" />
           </NextButton>
         </Pagination>
