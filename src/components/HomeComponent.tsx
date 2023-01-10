@@ -35,15 +35,16 @@ const HomeComponent = ({ pokemons, page }: Props) => {
           initialPage={page.currentPage - 1}
           className="inline-flex items-center text-sm font-semibold text-white"
           activeClassName="bg-blue-500"
+          activeLinkClassName="bg-blue-500"
           pageClassName="ml-2 bg-slate-900 rounded-lg hover:brightness-150"
-          pageLinkClassName="inline-flex justify-center w-10 h-10 items-center"
+          pageLinkClassName="inline-flex justify-center w-10 h-10 items-center rounded-lg"
           breakLabel="..."
-          breakClassName="ml-2 bg-slate-900 rounded-lg hover:brightness-150"
-          breakLinkClassName="inline-flex justify-center w-10 h-10 items-center"
-          nextClassName="ml-2 bg-slate-900 rounded-lg hover:brightness-150"
-          nextLinkClassName="inline-flex justify-center w-10 h-10 items-center"
-          previousClassName="bg-slate-900 rounded-lg hover:brightness-150"
-          previousLinkClassName="inline-flex justify-center w-10 h-10 items-center"
+          breakClassName="ml-2 bg-slate-900 hover:brightness-150 rounded-lg"
+          breakLinkClassName="inline-flex justify-center w-10 h-10 items-center rounded-lg"
+          nextClassName="ml-2 bg-slate-900 hover:brightness-150 rounded-lg"
+          nextLinkClassName="inline-flex justify-center w-10 h-10 items-center rounded-lg"
+          previousClassName="bg-slate-900 hover:brightness-150 rounded-lg"
+          previousLinkClassName="inline-flex justify-center w-10 h-10 items-center rounded-lg"
           nextLabel={<GrNext className="gr-white" />}
           previousLabel={<GrPrevious className="gr-white" />}
           onPageChange={handlePageClick}
