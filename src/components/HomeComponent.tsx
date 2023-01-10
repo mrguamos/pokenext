@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
 import type { IPage, MyPokemon } from '../../types/pokemon'
-import Pagination from './Pagination'
+import ReactPaginate from 'react-paginate'
 import PokeThumb from './PokeThumb'
 import { useRouter } from 'next/router'
+import { GrNext, GrPrevious } from 'react-icons/gr'
 
 type Props = {
   pokemons: MyPokemon[]
@@ -13,8 +14,8 @@ type Props = {
 const HomeComponent = ({ pokemons, page }: Props) => {
   const router = useRouter()
 
-  const handlePageClick = () => {
-    //
+  const handlePageClick = ({ selected }: { selected: number }) => {
+    router.push(`/?page=${selected + 1}`)
   }
 
   return (
@@ -29,7 +30,29 @@ const HomeComponent = ({ pokemons, page }: Props) => {
         })}
       </div>
       <div className="mt-10"></div>
-      <Pagination currentPage={page.currentPage} totalPage={page.count} />
+      <div className="text-center">
+        <ReactPaginate
+          initialPage={page.currentPage - 1}
+          className="inline-flex items-center text-sm font-semibold text-white"
+          activeClassName="bg-blue-500"
+          pageClassName="ml-2 bg-slate-900 rounded-lg hover:brightness-150"
+          pageLinkClassName="inline-flex justify-center w-10 h-10 items-center"
+          breakLabel="..."
+          breakClassName="ml-2 bg-slate-900 rounded-lg hover:brightness-150"
+          breakLinkClassName="inline-flex justify-center w-10 h-10 items-center"
+          nextClassName="ml-2 bg-slate-900 rounded-lg hover:brightness-150"
+          nextLinkClassName="inline-flex justify-center w-10 h-10 items-center"
+          previousClassName="bg-slate-900 rounded-lg hover:brightness-150"
+          previousLinkClassName="inline-flex justify-center w-10 h-10 items-center"
+          nextLabel={<GrNext className="gr-white" />}
+          previousLabel={<GrPrevious className="gr-white" />}
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={2}
+          marginPagesDisplayed={1}
+          pageCount={Math.ceil(page.count / 20)}
+          renderOnZeroPageCount={undefined}
+        />
+      </div>
     </>
   )
 }
