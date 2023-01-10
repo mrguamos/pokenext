@@ -37,13 +37,13 @@ const HomeComponent = ({ pokemons, page }: Props) => {
       <div className="mt-10"></div>
       <div className="text-center">
         <Pagination
-          className="inline-flex h-10 w-fit select-none items-center text-sm"
+          className="inline-flex h-10 w-fit select-none items-center justify-center text-sm"
           currentPage={page.currentPage - 1}
           edgePageCount={1}
           middlePagesSiblingCount={1}
           setCurrentPage={handlePageClick}
           totalPages={Math.ceil(page.count / 20)}
-          truncableClassName="text-white w-10"
+          truncableClassName="text-white"
           truncableText="..."
         >
           <PrevButton className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-700 bg-opacity-0 hover:bg-opacity-100">
