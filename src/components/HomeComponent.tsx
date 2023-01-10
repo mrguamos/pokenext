@@ -38,9 +38,7 @@ const HomeComponent = ({ pokemons, page }: Props) => {
           activeLinkClassName="bg-blue-500"
           pageClassName="ml-2 bg-slate-900 rounded-lg hover:brightness-200"
           pageLinkClassName="inline-flex justify-center w-10 h-10 items-center rounded-lg"
-          breakLabel="..."
-          breakClassName="ml-2 bg-slate-900 hover:brightness-150 rounded-lg"
-          breakLinkClassName="inline-flex justify-center w-10 h-10 items-center rounded-lg"
+          breakLabel={null}
           nextClassName="ml-2 bg-slate-900 hover:brightness-150 rounded-lg"
           nextLinkClassName="inline-flex justify-center w-10 h-10 items-center rounded-lg"
           previousClassName="bg-slate-900 hover:brightness-150 rounded-lg"
@@ -48,7 +46,7 @@ const HomeComponent = ({ pokemons, page }: Props) => {
           nextLabel={<GrNext className="gr-white" />}
           previousLabel={<GrPrevious className="gr-white" />}
           onPageChange={handlePageClick}
-          pageRangeDisplayed={2}
+          pageRangeDisplayed={4}
           marginPagesDisplayed={1}
           pageCount={Math.ceil(page.count / 20)}
           renderOnZeroPageCount={undefined}
