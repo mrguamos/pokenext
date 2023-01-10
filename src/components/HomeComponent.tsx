@@ -1,10 +1,15 @@
 import Link from 'next/link'
 import React from 'react'
 import type { IPage, MyPokemon } from '../../types/pokemon'
-import ReactPaginate from 'react-paginate'
 import PokeThumb from './PokeThumb'
 import { useRouter } from 'next/router'
 import { GrNext, GrPrevious } from 'react-icons/gr'
+import {
+  Pagination,
+  PageButton,
+  PrevButton,
+  NextButton,
+} from 'react-headless-pagination'
 
 type Props = {
   pokemons: MyPokemon[]
@@ -14,8 +19,8 @@ type Props = {
 const HomeComponent = ({ pokemons, page }: Props) => {
   const router = useRouter()
 
-  const handlePageClick = ({ selected }: { selected: number }) => {
-    router.push(`/?page=${selected + 1}`)
+  const handlePageClick = (page: number) => {
+    router.push(`/?page=${page + 1}`)
   }
 
   return (
@@ -31,26 +36,28 @@ const HomeComponent = ({ pokemons, page }: Props) => {
       </div>
       <div className="mt-10"></div>
       <div className="text-center">
-        <ReactPaginate
-          initialPage={page.currentPage - 1}
-          className="inline-flex items-center text-sm font-semibold text-white"
-          activeClassName="bg-blue-500 hover:filter-none"
-          activeLinkClassName="bg-blue-500"
-          pageClassName="ml-2 bg-slate-900 rounded-lg hover:brightness-200"
-          pageLinkClassName="inline-flex justify-center w-10 h-10 items-center rounded-lg"
-          breakLabel={null}
-          nextClassName="ml-2 bg-slate-900 hover:brightness-150 rounded-lg"
-          nextLinkClassName="inline-flex justify-center w-10 h-10 items-center rounded-lg"
-          previousClassName="bg-slate-900 hover:brightness-150 rounded-lg"
-          previousLinkClassName="inline-flex justify-center w-10 h-10 items-center rounded-lg"
-          nextLabel={<GrNext className="gr-white" />}
-          previousLabel={<GrPrevious className="gr-white" />}
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={4}
-          marginPagesDisplayed={1}
-          pageCount={Math.ceil(page.count / 20)}
-          renderOnZeroPageCount={undefined}
-        />
+        <Pagination
+          className="inline-flex h-10 select-none items-center text-sm"
+          currentPage={page.currentPage - 1}
+          edgePageCount={1}
+          middlePagesSiblingCount={1}
+          setCurrentPage={handlePageClick}
+          totalPages={Math.ceil(page.count / 20)}
+          truncableClassName="text-white w-10"
+          truncableText="..."
+        >
+          <PrevButton className="ml-2 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-700 bg-opacity-0 hover:bg-opacity-100">
+            <GrPrevious className="gr-white" />
+          </PrevButton>
+          <PageButton
+            activeClassName="bg-blue-600 hover:brightness-150"
+            className="ml-2 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-white "
+            inactiveClassName="bg-slate-700 bg-opacity-0 hover:bg-opacity-100"
+          />
+          <NextButton className="ml-2 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-700 bg-opacity-0 hover:bg-opacity-100">
+            <GrNext className="gr-white" />
+          </NextButton>
+        </Pagination>
       </div>
     </>
   )
