@@ -20,7 +20,7 @@ const HomeComponent = ({ pokemons, page }: Props) => {
   const router = useRouter()
 
   const handlePageClick = (page: number) => {
-    router.push(`/?page=${page + 1}`)
+    router.push(`?page=${page + 1}`)
   }
 
   return (
